@@ -180,7 +180,7 @@ class InitCommand extends TemplatesCommand {
       let [searchCriteria, orderByCriteria] = await this.getSearchCriteria(orgSupportedServices)
       if (noLogin) {
         searchCriteria = {
-          [TemplateRegistryAPI.SEARCH_CRITERIA_STATUSES]: TemplateRegistryAPI.TEMPLATE_STATUS_APPROVED,
+          [TemplateRegistryAPI.SEARCH_CRITERIA_STATUSES]: [TemplateRegistryAPI.TEMPLATE_STATUS_APPROVED,TemplateRegistryAPI.TEMPLATE_STATUS_IN_VERIFICATION],
           [TemplateRegistryAPI.SEARCH_CRITERIA_CATEGORIES]: TemplateRegistryAPI.SEARCH_CRITERIA_FILTER_NOT + 'helper-template'
         }
         orderByCriteria = {
